@@ -20,7 +20,7 @@ const projects = [
     title: "Pétanque 3D",
     category: "jeu",
     description: "Simulation réaliste de pétanque en 3D avec physique avancée et environnements variés.",
-    image: "/assets/images/app-section/petanque.png",
+    image: "/images/app-section/petanque.png",
     projectUrl: "#",
     githubUrl: "https://github.com/yourusername/petanque-3d"
   },
@@ -28,7 +28,7 @@ const projects = [
     title: "СОВЕТСКИЙ ТЕТРИС",
     category: "jeu",
     description: "Version rétro du classique Tetris avec esthétique soviétique, musique thématique et effets visuels nostalgiques.",
-    image: "/assets/images/app-section/tetrissovietique.png",
+    image: "/images/app-section/tetrissovietique.png",
     projectUrl: "#",
     githubUrl: "https://github.com/yourusername/soviet-tetris"
   },
@@ -36,7 +36,7 @@ const projects = [
     title: "Anim'Hopy",
     category: "app",
     description: "Site web pour une association d'aide aux enfants dans les hôpitaux de Villeneuve Saint-George, facilitant le bénévolat et les dons.",
-    image: "/assets/images/app-section/animhopy.png",
+    image: "/images/app-section/animhopy.png",
     projectUrl: "#",
     githubUrl: "https://github.com/yourusername/animhopy"
   },
@@ -44,7 +44,7 @@ const projects = [
     title: "Taskflow",
     category: "app",
     description: "Application de gestion de tâches inspirée de Trello, avec fonctionnalités de drag-and-drop et organisation en tableaux personnalisables.",
-    image: "/assets/images/app-section/taskflow.png",
+    image: "/images/app-section/taskflow.png",
     projectUrl: "#",
     githubUrl: "https://github.com/yourusername/taskflow"
   },
@@ -52,7 +52,7 @@ const projects = [
     title: "Techno Music",
     category: "app",
     description: "Générateur de particules réactif à la musique créant des visualisations immersives et synchronisées au rythme des morceaux.",
-    image: "/assets/images/app-section/musiqueparticule.png",
+    image: "/images/app-section/musiqueparticule.png",
     projectUrl: "#",
     githubUrl: "https://github.com/yourusername/techno-music"
   },
@@ -60,7 +60,7 @@ const projects = [
     title: "Ma Boutique Symphony",
     category: "app",
     description: "Site e-commerce complet développé avec Symfony, incluant gestion des produits, panier, paiement et espace client.",
-    image: "/assets/images/app-section/maboutique.png",
+    image: "/images/app-section/maboutique.png",
     projectUrl: "#",
     githubUrl: "https://github.com/yourusername/boutique-symphony"
   },
@@ -68,7 +68,7 @@ const projects = [
     title: "MousquetAI",
     category: "ia",
     description: "Assistant intelligent pour sites web offrant un support utilisateur en temps réel avec une interface conversationnelle naturelle.",
-    image: "/assets/images/app-section/iaassistant.png",
+    image: "/images/app-section/iaassistant.png",
     projectUrl: "#",
     githubUrl: "https://github.com/yourusername/mousquetai"
   },
@@ -76,7 +76,7 @@ const projects = [
     title: "Object Detector",
     category: "ia",
     description: "Application de détection d'objets en temps réel utilisant la vision par ordinateur et l'apprentissage profond.",
-    image: "/assets/images/app-section/iadetector.png",
+    image: "/images/app-section/iadetector.png",
     projectUrl: "#",
     githubUrl: "https://github.com/yourusername/object-detector"
   },
@@ -84,7 +84,7 @@ const projects = [
     title: "Sign Language Translator",
     category: "ia",
     description: "Logiciel de traduction du langage des signes en temps réel, facilitant la communication entre personnes sourdes et entendantes.",
-    image: "/assets/images/app-section/signia.png",
+    image: "/images/app-section/signia.png",
     projectUrl: "#",
     githubUrl: "https://github.com/yourusername/sign-translator"
   },
@@ -92,7 +92,7 @@ const projects = [
     title: "Anim Generator IA",
     category: "ia",
     description: "Logiciel de génération de vidéos utilisant des modèles d'IA avancés pour créer du contenu animé à partir de descriptions textuelles.",
-    image: "/assets/images/app-section/iavideo.png",
+    image: "/images/app-section/iavideo.png",
     projectUrl: "#",
     githubUrl: "https://github.com/yourusername/anim-generator"
   }

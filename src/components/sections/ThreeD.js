@@ -19,37 +19,37 @@ const threeDProjects = [
     title: "Jiji et sa copine",
     category: "modelisation",
     description: "Modélisation 3D des chats de Kiki la petite sorcière avec textures détaillées et rig pour animation.",
-    image: "/assets/images/3D/chat.jpg"
+    image: "/images/3D/chat.jpg"
   },
   {
     title: "Sophie la Girafe",
     category: "modelisation",
     description: "Reproduction fidèle du célèbre jouet pour enfants avec matériaux réalistes et textures détaillées.",
-    image: "/assets/images/3D/sophie.png"
+    image: "/images/3D/sophie.png"
   },
   {
     title: "Téléphone Fisher-Price",
     category: "modelisation",
     description: "Modélisation nostalgique du téléphone jouet classique avec des matériaux PBR et éclairage studio.",
-    image: "/assets/images/3D/telephone.png"
+    image: "/images/3D/telephone.png"
   },
   {
     title: "Figurine Playmobil",
     category: "modelisation",
     description: "Modélisation précise d'une figurine Playmobil avec système d'articulation et accessoires détaillés.",
-    image: "/assets/images/3D/playmobil.png"
+    image: "/images/3D/playmobil.png"
   },
   {
     title: "Court-métrage \"trump vs biden\"",
     category: "video",
     description: "Animation 3D racontant l'histoire d'un robot qui découvre la conscience.",
-    image: "/assets/images/3D/trump.png"
+    image: "/images/3D/trump.png"
   },
   {
     title: "Motion Design \"showreal 2024\"",
     category: "video",
     description: "Séquence de motion design avec des formes abstraites en transformation fluide.",
-    image: "/assets/images/3D/showreel.png"
+    image: "/images/3D/showreel.png"
   }
 ]
 
