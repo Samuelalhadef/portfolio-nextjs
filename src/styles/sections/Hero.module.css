@@ -1,0 +1,318 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.particlesCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 600px;
+  margin-right: 50px;
+}
+
+.heroSubtitle {
+  font-family: 'Space Grotesk', sans-serif;
+  color: var(--accent);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+  opacity: 0;
+  transform: translateY(50px);
+  filter: blur(5px);
+}
+
+.heroTitle {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 5rem;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(50px);
+  filter: blur(5px);
+}
+
+.accentText {
+  display: block;
+  color: var(--accent);
+}
+
+.heroDescription {
+  max-width: 600px;
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+  line-height: 1.6;
+  color: var(--gray);
+  opacity: 0;
+  transform: translateY(50px);
+  filter: blur(5px);
+}
+
+.heroCta {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--dark);
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--glow);
+  opacity: 0;
+  transform: translateY(50px);
+  filter: blur(5px);
+}
+
+.heroCta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: all 0.6s ease;
+}
+
+.heroCta:hover::before {
+  left: 100%;
+}
+
+/* Nouvel élément graphique remplaçant le cube 3D */
+.heroGraphic {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  z-index: 5;
+  opacity: 0;
+  transform: translateY(50px) scale(0.9);
+  filter: blur(5px);
+}
+
+.graphicContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.graphicCircle {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, var(--accent) 0%, rgba(75, 227, 172, 0.2) 70%);
+  border-radius: 50%;
+  box-shadow: 0 0 30px var(--accent);
+  animation: pulse 3s infinite ease-in-out;
+}
+
+.graphicRing {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  opacity: 0.5;
+  animation: expand 3s infinite ease-out;
+}
+
+.floatingElement {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(10, 14, 23, 0.7);
+  border: 1px solid var(--accent);
+  box-shadow: 0 0 15px rgba(75, 227, 172, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--accent);
+  font-size: 1.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: float 5s infinite ease-in-out;
+}
+
+.element1 {
+  top: 10%;
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.element2 {
+  top: 70%;
+  left: 15%;
+  animation-delay: 1s;
+}
+
+.element3 {
+  top: 20%;
+  right: 15%;
+  animation-delay: 2s;
+}
+
+.element4 {
+  bottom: 20%;
+  right: 20%;
+  animation-delay: 1.5s;
+}
+
+.element5 {
+  bottom: 35%;
+  left: 10%;
+  animation-delay: 0.5s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(75, 227, 172, 0.7);
+  }
+  
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 15px rgba(75, 227, 172, 0);
+  }
+  
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(75, 227, 172, 0);
+  }
+}
+
+@keyframes expand {
+  0% {
+    width: 180px;
+    height: 180px;
+    opacity: 0.8;
+  }
+  
+  100% {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  
+  50% {
+    transform: translateY(-15px);
+  }
+  
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .hero {
+    padding: 80px;
+  }
+  
+  .heroTitle {
+    font-size: 4rem;
+  }
+  
+  .heroGraphic {
+    width: 350px;
+    height: 350px;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero {
+    padding: 60px;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .heroContent {
+    margin-right: 0;
+    margin-bottom: 50px;
+  }
+  
+  .heroTitle {
+    font-size: 3.5rem;
+  }
+  
+  .heroDescription {
+    margin: 0 auto 3rem;
+  }
+  
+  .heroGraphic {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 40px;
+  }
+  
+  .heroTitle {
+    font-size: 3rem;
+  }
+  
+  .heroDescription {
+    font-size: 1rem;
+  }
+  
+  .heroGraphic {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    padding: 30px;
+  }
+  
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+  
+  .heroGraphic {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .floatingElement {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+}

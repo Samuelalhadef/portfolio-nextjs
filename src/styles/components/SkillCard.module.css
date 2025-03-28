@@ -1,0 +1,83 @@
+.skillCard {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.skillCardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.skillCard:hover .skillCardInner {
+  transform: rotateY(180deg);
+}
+
+.skillCardFront, .skillCardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.skillCardFront {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.skillCardBack {
+  background: var(--primary);
+  transform: rotateY(180deg);
+  border: 1px solid var(--accent);
+}
+
+.skillIcon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: var(--accent);
+}
+
+.skillName {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.skillDescription {
+  color: var(--light);
+  font-size: 0.9rem;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.skillLevel {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  margin-top: 15px;
+  overflow: hidden;
+}
+
+.skillProgress {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 3px;
+}
+
+/* Animation when hovering */
+.skillCard:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--glow);
+}

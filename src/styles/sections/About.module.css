@@ -1,0 +1,135 @@
+.about {
+  background: var(--gradient);
+  min-height: 100vh;
+  width: 100%;
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.sectionContent {
+  max-width: 1200px;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+.sectionTitle {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  position: relative;
+  display: inline-block;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100px;
+  height: 4px;
+  background: var(--accent);
+}
+
+.aboutGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+}
+
+.aboutImage {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 500px;
+}
+
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(11, 61, 145, 0.7), rgba(252, 61, 33, 0.7));
+  opacity: 0.6;
+}
+
+.aboutContent h3 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--accent);
+}
+
+.aboutContent p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  color: var(--gray);
+}
+
+.aboutStats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-top: 2rem;
+}
+
+.statItem {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.statItem:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--glow);
+  border-color: var(--accent);
+}
+
+.statValue {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+}
+
+.statLabel {
+  font-size: 1.1rem;
+  color: var(--gray);
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .about {
+    padding: 60px;
+  }
+  
+  .aboutGrid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 40px;
+  }
+  
+  .sectionTitle {
+    font-size: 2.5rem;
+  }
+  
+  .aboutStats {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .about {
+    padding: 30px;
+  }
+}

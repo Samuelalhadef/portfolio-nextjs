@@ -1,0 +1,114 @@
+.projectCard {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.projectCard:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--glow);
+  border-color: var(--accent);
+}
+
+.projectImageWrapper {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.projectImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.projectCard:hover .projectImage {
+  transform: scale(1.05);
+}
+
+.projectContent {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.projectTitle {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--light);
+  font-family: 'Orbitron', sans-serif;
+}
+
+.projectCategory {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.projectDescription {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  color: var(--gray);
+}
+
+.projectLink {
+  align-self: flex-start;
+  background: var(--accent);
+  color: var(--dark);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.8rem;
+  padding: 8px 15px;
+  border-radius: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  margin-top: auto;
+  letter-spacing: 0.5px;
+}
+
+.projectLink:hover {
+  background: var(--light);
+  box-shadow: var(--glow);
+}
+
+/* Tag overlay sur l'image */
+.projectTag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--accent);
+  color: var(--dark);
+  font-size: 0.7rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .projectImageWrapper {
+    height: 180px;
+  }
+  
+  .projectTitle {
+    font-size: 1.3rem;
+  }
+  
+  .projectDescription {
+    font-size: 0.85rem;
+  }
+}

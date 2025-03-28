@@ -1,0 +1,112 @@
+.cursorContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  will-change: transform;
+  transition: opacity 0.3s ease;
+}
+
+.cursorContainer.hidden {
+  opacity: 0;
+}
+
+.cursorDot {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  will-change: transform, width, height;
+  transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
+  z-index: 10001;
+  box-shadow: 0 0 10px rgba(75, 227, 172, 0.5);
+}
+
+.cursorTrail {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background-color: var(--accent);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.5;
+  will-change: transform, opacity;
+  z-index: 10000;
+  transition: background-color 0.2s ease;
+  animation: pulse 2s infinite ease-in-out;
+  animation-delay: calc(var(--index) * 0.1s);
+}
+
+.cursorGlow {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  background: radial-gradient(circle, rgba(75, 227, 172, 0.4) 0%, rgba(75, 227, 172, 0) 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  will-change: transform, width, height;
+  z-index: 9999;
+  filter: blur(5px);
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+/* États interactifs */
+.cursorContainer.onInteractive .cursorDot {
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+}
+
+.cursorContainer.onInteractive .cursorTrail {
+  background-color: #fff;
+}
+
+.cursorContainer.onInteractive .cursorGlow {
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 70%);
+}
+
+/* États spécifiques d'interaction */
+.cursorContainer.onNav .cursorDot {
+  background-color: var(--accent);
+  box-shadow: 0 0 15px var(--accent);
+}
+
+.cursorContainer.onCard .cursorDot {
+  width: 20px;
+  height: 20px;
+  background-color: var(--secondary);
+}
+
+.cursorContainer.onCard .cursorTrail {
+  background-color: var(--secondary);
+}
+
+/* État actif (clic) */
+.cursorDot.active {
+  transform: translate(-50%, -50%) scale(0.7);
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Media query pour les appareils tactiles */
+@media (hover: none) and (pointer: coarse) {
+  .cursorContainer {
+    display: none;
+  }
+}

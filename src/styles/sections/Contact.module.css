@@ -1,0 +1,286 @@
+.contact {
+  background: var(--gradient);
+  min-height: 100vh;
+  width: 100%;
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.sectionContent {
+  max-width: 1200px;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+.sectionTitle {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  position: relative;
+  display: inline-block;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100px;
+  height: 4px;
+  background: var(--accent);
+}
+
+.contactContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+}
+
+.contactInfo h3 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--accent);
+}
+
+.contactText {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  color: var(--gray);
+}
+
+.contactDetails {
+  margin-top: 2rem;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.contactIcon {
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+  color: var(--accent);
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.contactItem:hover .contactIcon {
+  background: var(--accent);
+  color: var(--dark);
+  box-shadow: var(--glow);
+}
+
+.contactValue {
+  font-size: 1rem;
+  color: var(--light);
+}
+
+.contactForm {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.formLabel {
+  display: block;
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 10px;
+  color: var(--light);
+}
+
+.formInput {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  padding: 12px 15px;
+  color: var(--light);
+  font-family: 'Space Grotesk', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.formInput:focus {
+  border-color: var(--accent);
+  outline: none;
+  box-shadow: var(--glow);
+}
+
+.textArea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.inputError {
+  border-color: var(--secondary);
+}
+
+.errorMessage {
+  color: var(--secondary);
+  font-size: 0.85rem;
+  margin-top: 5px;
+}
+
+.submitBtn {
+  background: var(--accent);
+  color: var(--dark);
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+  box-shadow: var(--glow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.submitBtn:hover {
+  background: var(--light);
+}
+
+.submitBtn:disabled {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--gray);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid transparent;
+  border-top-color: var(--dark);
+  border-radius: 50%;
+  margin-right: 10px;
+  animation: spin 1s linear infinite;
+}
+
+.successMessage {
+  text-align: center;
+  padding: 20px;
+}
+
+.successIcon {
+  font-size: 3rem;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .contact {
+    padding: 60px;
+  }
+  
+  .contactContainer {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 40px;
+  }
+  
+  .sectionTitle {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact {
+    padding: 30px;
+  }
+  
+  .contactForm {
+    padding: 20px;
+  }
+}
+
+.spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 10px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.errorAlert {
+  background-color: rgba(255, 99, 71, 0.2);
+  border: 1px solid rgba(255, 99, 71, 0.6);
+  color: #ff6347;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+}
+
+.errorAlert i {
+  margin-right: 10px;
+  font-size: 1.1rem;
+}
+
+.successMessage {
+  text-align: center;
+  padding: 30px;
+}
+
+.successIcon {
+  color: var(--accent);
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.successMessage h3 {
+  color: var(--light);
+  margin-bottom: 15px;
+}
+
+.successMessage p {
+  color: var(--gray);
+}
+
+.inputError {
+  border-color: #ff6347 !important;
+}
+
+.errorMessage {
+  color: #ff6347;
+  font-size: 0.8rem;
+  margin-top: 5px;
+}

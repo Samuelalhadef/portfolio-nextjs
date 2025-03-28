@@ -1,0 +1,471 @@
+/* src/styles/sections/Drone.module.css */
+
+.drone {
+  background: var(--gradient);
+  position: relative;
+  min-height: 100vh;
+}
+
+.sectionContent {
+  max-width: 1200px;
+  width: 100%;
+  padding: 100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+.sectionTitle {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  position: relative;
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(50px);
+  filter: blur(5px);
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100px;
+  height: 4px;
+  background: var(--accent);
+}
+
+.droneIntro {
+  max-width: 800px;
+  margin: 0 auto 50px;
+  text-align: center;
+  color: var(--gray);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  opacity: 0;
+  transform: translateY(50px);
+  filter: blur(5px);
+}
+
+/* Viewport style - drone screen */
+.droneViewport {
+  position: relative;
+  margin-bottom: 50px;
+  opacity: 0;
+  transform: translateY(50px);
+  filter: blur(5px);
+}
+
+.droneCamera {
+  position: relative;
+  width: 100%;
+  background: #0A0E17;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(75, 227, 172, 0.3);
+}
+
+.droneCameraFrame {
+  position: relative;
+  width: 100%;
+  height: 550px;
+  overflow: hidden;
+}
+
+.droneImageContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.droneImage {
+  object-fit: cover;
+  object-position: center;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* HUD (Heads-Up Display) overlay */
+.droneHUD {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  color: var(--accent);
+  font-family: 'Orbitron', sans-serif;
+}
+
+.hudElement {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  background: rgba(10, 14, 23, 0.7);
+  border: 1px solid var(--accent);
+  border-radius: 5px;
+  padding: 5px 10px;
+  backdrop-filter: blur(2px);
+}
+
+.hudElement:nth-child(1) {
+  top: 20px;
+  left: 20px;
+}
+
+.hudElement:nth-child(2) {
+  top: 20px;
+  right: 20px;
+}
+
+.hudElement:nth-child(3) {
+  bottom: 20px;
+  left: 20px;
+}
+
+.hudLabel {
+  font-size: 0.8rem;
+  margin-right: 8px;
+  opacity: 0.8;
+}
+
+.hudValue {
+  font-size: 0.9rem;
+}
+
+.hudCorners {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.hudCorner {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--accent);
+  opacity: 0.7;
+}
+
+.hudCorner:nth-child(1) {
+  top: 10px;
+  left: 10px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.hudCorner:nth-child(2) {
+  top: 10px;
+  right: 10px;
+  border-left: none;
+  border-bottom: none;
+}
+
+.hudCorner:nth-child(3) {
+  bottom: 10px;
+  left: 10px;
+  border-right: none;
+  border-top: none;
+}
+
+.hudCorner:nth-child(4) {
+  bottom: 10px;
+  right: 10px;
+  border-left: none;
+  border-top: none;
+}
+
+.hudBattery {
+  width: 50px;
+  height: 16px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+
+.hudBatteryLevel {
+  height: 100%;
+  transition: width 0.5s ease, background-color 0.5s ease;
+}
+
+.hudTimestamp {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(10, 14, 23, 0.7);
+  border: 1px solid var(--accent);
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  color: var(--accent);
+  animation: blink 2s infinite;
+}
+
+@keyframes blink {
+  0%, 98% { opacity: 1; }
+  50% { opacity: 1; }
+  51%, 97% { opacity: 0.8; }
+}
+
+/* Controls */
+.droneControls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  background: rgba(10, 14, 23, 0.9);
+  border-top: 1px solid rgba(75, 227, 172, 0.3);
+}
+
+.droneNavButton {
+  width: 45px;
+  height: 45px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(75, 227, 172, 0.5);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--accent);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.droneNavButton:hover {
+  background: var(--accent);
+  color: var(--dark);
+  transform: scale(1.1);
+}
+
+.dronePositionTrack {
+  position: relative;
+  flex-grow: 1;
+  height: 30px;
+  margin: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dronePositionLine {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgba(75, 227, 172, 0.3);
+  transform: translateY(-50%);
+}
+
+.dronePositionIndicator {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  background: var(--accent);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px var(--accent);
+}
+
+.dronePositionMarker {
+  position: relative;
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(75, 227, 172, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.dronePositionMarker:hover, .dronePositionMarker.active {
+  background: var(--accent);
+  transform: scale(1.2);
+}
+
+/* Info panel */
+.droneInfo {
+  margin-top: 30px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 30px;
+}
+
+.droneInfoContent {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.droneLocation {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: var(--accent);
+}
+
+.droneMetadata {
+  display: flex;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+
+.droneDate, .droneCoordinates {
+  display: inline-block;
+  background: rgba(75, 227, 172, 0.1);
+  border: 1px solid rgba(75, 227, 172, 0.3);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: var(--gray);
+}
+
+.droneDescription {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--gray);
+}
+
+/* Specs */
+.droneSpecs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.droneSpec {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 25px;
+  text-align: center;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(50px);
+  filter: blur(5px);
+}
+
+.droneSpec:hover {
+  transform: translateY(-10px);
+  border-color: var(--accent);
+  box-shadow: var(--glow);
+}
+
+.specIcon {
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 15px;
+}
+
+.specName {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: var(--light);
+}
+
+.specValue {
+  color: var(--gray);
+  font-size: 0.9rem;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .sectionContent {
+    padding: 80px;
+  }
+  
+  .droneCameraFrame {
+    height: 500px;
+  }
+}
+
+@media (max-width: 992px) {
+  .sectionContent {
+    padding: 60px;
+  }
+  
+  .droneCameraFrame {
+    height: 450px;
+  }
+  
+  .droneLocation {
+    font-size: 1.8rem;
+  }
+  
+  .droneSpecs {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .sectionContent {
+    padding: 40px;
+  }
+  
+  .droneCameraFrame {
+    height: 400px;
+  }
+  
+  .droneLocation {
+    font-size: 1.5rem;
+  }
+  
+  .droneSpecs {
+    grid-template-columns: 1fr;
+  }
+  
+  .hudElement {
+    padding: 4px 8px;
+    font-size: 0.8rem;
+  }
+  
+  .hudCorner {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .sectionContent {
+    padding: 30px;
+  }
+  
+  .droneCameraFrame {
+    height: 350px;
+  }
+  
+  .droneInfo {
+    padding: 20px;
+  }
+  
+  .droneLocation {
+    font-size: 1.3rem;
+  }
+  
+  .droneDescription {
+    font-size: 0.9rem;
+  }
+  
+  .droneMetadata {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .hudElement:nth-child(2) {
+    display: none;
+  }
+}
